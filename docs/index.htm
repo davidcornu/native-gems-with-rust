@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/newyork.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<style>
+:root{
+--logo: ;
+--darkaccent1color: #FFC400;
+--lightaccent1color: #FFC400;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #FFC400;
+--darktitletextcolor: #000;
+--lightbodytextcolor: #FFF;
+--darkbodytextcolor: #000;
+--lightbackgroundcolor: #ffffff;
+--darkbackgroundcolor: #000000;
+--bodyfont: inter;
+--titlefont: inter;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+</head>
+<body class="responsive">
+<div class="reveal">
+<div class="slides">
+<section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="nativerubygemswithrust">Native Ruby gems with Rust</h1>
+
+<p><a href="https://www.meetup.com/montrealrb/events/307030572/">Montreal.rb 2025-05-21</a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="pleaseaskquestions🙋">Please ask questions 🙋</h1>
+
+<h2 id="orshareyourknowledge">(or share your knowledge)</h2></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="nhésitezpasàposervosquestionsenfrançais">N'hésitez pas à poser vos questions en français</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="bonjourhi">Bonjour Hi</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/patch.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/hack%20club.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="ruby:2009">Ruby: 2009</h1>
+
+<h1 id="rust:2017">Rust: 2017</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="context">Context</h1>
+<div class="single-image-wrapper"><figure><img src="images/Skill%20tree.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/The%20Loop.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/What%20is%20Ruby.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light grid-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-grid grid-items-4 has-only-media media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Ruby%20Under%20a%20Microscope.png" class=" size-contain position-center-center"></figure><figure style=""><img src="images/working%20with%20ruby%20threads.png" class=" size-contain position-center-center"></figure><figure style=""><img src="images/working%20with%20tcp%20sockets.png" class=" size-contain position-center-center"></figure><figure style=""><img src="images/working%20with%20unix%20processes.png" class=" size-contain position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/CleanShot%202025-05-20%20at%2015.06.41@2x.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>In 2015-2017 a lot of folks from the Ruby community started talking about Rust </p>
+
+<ul>
+<li><strong>Yehuda Katz</strong> - <a href="https://www.youtube.com/watch?v=uiNpoDB4dA0">Turbo Rails with Rust</a></li>
+<li><strong>Steve Klabnik</strong> - <a href="https://www.youtube.com/watch?v=NaIXIKVxg3M">Rust for Rubyists</a></li>
+<li><strong>Sage Griffin</strong> - <a href="https://www.youtube.com/watch?v=wxPehGkoNOw">Type System Tips for the Real World</a></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light caption-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-caption media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Exceptional.png" class=" size-contain position-center-center"></figure>
+        <div style=""><p><a href="https://github.com/exceptional-lang/exceptional">github.com/exceptional-lang/exceptional</a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light grid-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-grid grid-items-1 has-only-media media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><div class="layout-grid media-grid grid-items-2"><figure><img src="images/Rust%20book.png" class=" position-center-center"></figure><figure><img src="images/Crafting%20Interpreters.png" class=" position-center-center"></figure></div>
+</div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Learning%20curve.png" class=" size-contain position-center-center"><figcaption> <a href="https://gist.github.com/humb1t/086cbba82ef3220f08d9899ce1f1deca">Source</a></figcaption></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Scraper%20GH.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light caption-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-caption media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Sawzall%20GH.png" class=" size-contain position-center-center"></figure>
+        <div style=""><p><a href="https://github.com/davidcornu/sawzall">Repo</a>, <a href="https://davidcornu.github.io/sawzall/Sawzall.html">Docs</a>, <a href="https://rubygems.org/gems/sawzall">RubyGems.org</a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h2 id="whatwewillcover">What we will cover</h2>
+
+<ol>
+<li>How <code class="hljs awk"><span class="hljs-regexp">/usr/</span>bin/ruby</code> works</li>
+<li>Native extensions and how to build them</li>
+<li>Why you might want to consider Rust</li>
+<li>Making Ruby talk to Rust</li>
+<li>Getting started (with a live demo 🤞)</li>
+<li>Additional considerations</li>
+</ol></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="rubyunderafisheyelens">Ruby Under a Fisheye Lens</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/YARV%20Instructions.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-comment">/* Set a local variable (pointed to by 'idx') as val.
+     'level' indicates the nesting depth from the current block.
+ */</span>
+<span class="hljs-function">DEFINE_INSN
+<span class="hljs-title">setlocal</span>
+<span class="hljs-params">(<span class="hljs-keyword">lindex_t</span> idx, <span class="hljs-keyword">rb_num_t</span> level)</span>
+<span class="hljs-params">(VALUE val)</span>
+<span class="hljs-params">()</span>
+</span>{
+    vm_env_write(vm_get_ep(GET_EP(), level), -(<span class="hljs-keyword">int</span>)idx, val);
+    RB_DEBUG_COUNTER_INC(lvar_set);
+    (<span class="hljs-keyword">void</span>)RB_DEBUG_COUNTER_INC_IF(lvar_set_dynamic, level &gt; <span class="hljs-number">0</span>);
+}
+</code></pre>
+
+<p><a href="https://github.com/ruby/ruby/blob/b043abc048e74d5f3fdca37395457e6f24abbe55/insns.def#L87-L99"><code class="hljs avrasm">ruby/insns<span class="hljs-meta">.def</span></code></a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">static</span> VALUE
+<span class="hljs-title">vm_exec_core</span><span class="hljs-params">(<span class="hljs-keyword">rb_execution_context_t</span> *ec)</span>
+</span>{
+    <span class="hljs-keyword">register</span> <span class="hljs-keyword">rb_control_frame_t</span> *reg_cfp = ec-&gt;cfp;
+    <span class="hljs-keyword">rb_thread_t</span> *th;
+
+    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+        reg_cfp = ((<span class="hljs-keyword">rb_insn_func_t</span>) (*GET_PC()))(ec, reg_cfp);
+
+        <span class="hljs-keyword">if</span> (UNLIKELY(reg_cfp == <span class="hljs-number">0</span>)) {
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+</code></pre>
+
+<p><a href="https://github.com/ruby/ruby/blob/97e774b95d5233f801666f873c27de64684b0cf0/vm_exec.c"><code class="hljs llvm">vm_exec.<span class="hljs-keyword">c</span></code></a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><pre><code class="c hljs c-like">ruby_value_type {
+    RUBY_T_NONE     = <span class="hljs-number">0x00</span>, <span class="hljs-comment">/**&lt; Non-object (swept etc.) */</span>
+
+    RUBY_T_OBJECT   = <span class="hljs-number">0x01</span>, <span class="hljs-comment">/**&lt; @see struct ::RObject */</span>
+    RUBY_T_CLASS    = <span class="hljs-number">0x02</span>, <span class="hljs-comment">/**&lt; @see struct ::RClass and ::rb_cClass */</span>
+    RUBY_T_MODULE   = <span class="hljs-number">0x03</span>, <span class="hljs-comment">/**&lt; @see struct ::RClass and ::rb_cModule */</span>
+    RUBY_T_FLOAT    = <span class="hljs-number">0x04</span>, <span class="hljs-comment">/**&lt; @see struct ::RFloat */</span>
+    RUBY_T_STRING   = <span class="hljs-number">0x05</span>, <span class="hljs-comment">/**&lt; @see struct ::RString */</span>
+    RUBY_T_REGEXP   = <span class="hljs-number">0x06</span>, <span class="hljs-comment">/**&lt; @see struct ::RRegexp */</span>
+    RUBY_T_ARRAY    = <span class="hljs-number">0x07</span>, <span class="hljs-comment">/**&lt; @see struct ::RArray */</span>
+    RUBY_T_HASH     = <span class="hljs-number">0x08</span>, <span class="hljs-comment">/**&lt; @see struct ::RHash */</span>
+    RUBY_T_STRUCT   = <span class="hljs-number">0x09</span>, <span class="hljs-comment">/**&lt; @see struct ::RStruct */</span>
+    RUBY_T_BIGNUM   = <span class="hljs-number">0x0a</span>, <span class="hljs-comment">/**&lt; @see struct ::RBignum */</span>
+    RUBY_T_FILE     = <span class="hljs-number">0x0b</span>, <span class="hljs-comment">/**&lt; @see struct ::RFile */</span>
+    <span class="hljs-comment">// ...</span>
+</code></pre>
+
+<p><a href="https://github.com/ruby/ruby/blob/97e774b95d5233f801666f873c27de64684b0cf0/include/ruby/internal/value_type.h#L113-L146"><code class="hljs gradle"><span class="hljs-keyword">include</span><span class="hljs-regexp">/ruby/i</span>nternal/value_type.h</code></a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-function">VALUE
+<span class="hljs-title">rb_obj_as_string</span><span class="hljs-params">(VALUE obj)</span>
+</span>{
+    VALUE str;
+
+    <span class="hljs-keyword">if</span> (RB_TYPE_P(obj, T_STRING)) {
+        <span class="hljs-keyword">return</span> obj;
+    }
+</code></pre>
+
+<p><a href="https://github.com/ruby/ruby/blob/7b10660974dcdd7882a48a62cfc2a32c4a17aa85/string.c#L2162-L2169"><code class="hljs angelscript"><span class="hljs-built_in">string</span>.c</code></a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.531rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">void</span>
+<span class="hljs-title">rb_gc_mark_children</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *objspace, VALUE obj)</span>
+</span>{
+    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">gc_mark_classext_foreach_arg</span> <span class="hljs-title">foreach_args</span>;</span>
+
+    <span class="hljs-keyword">if</span> (FL_TEST_RAW(obj, FL_EXIVAR)) {
+        rb_mark_generic_ivar(obj);
+    }
+
+    <span class="hljs-keyword">switch</span> (BUILTIN_TYPE(obj)) {
+      <span class="hljs-keyword">case</span> T_FLOAT:
+      <span class="hljs-keyword">case</span> T_BIGNUM:
+      <span class="hljs-keyword">case</span> T_SYMBOL:
+        <span class="hljs-comment">/* Not immediates, but does not have references and singleton class.
+         *
+         * RSYMBOL(obj)-&gt;fstr intentionally not marked. See log for 96815f1e
+         * ("symbol.c: remove rb_gc_mark_symbols()") */</span>
+        <span class="hljs-keyword">return</span>;
+</code></pre>
+
+<p><a href="https://github.com/ruby/ruby/blob/7b10660974dcdd7882a48a62cfc2a32c4a17aa85/gc.c#L3145-L3163"><code class="hljs llvm"><span class="hljs-keyword">gc</span>.<span class="hljs-keyword">c</span></code></a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="whatdoesthisgetus✨">What does this get us? ✨</h2>
+
+<ol>
+<li>Memory safety (for Ruby code)</li>
+<li>Hot code reloading / no compilation step</li>
+<li>Runtime metaprogramming</li>
+<li>Duck-typing</li>
+<li>Portability</li>
+<li>"Everything is an Object"</li>
+</ol></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="whynativeextensions">Why native extensions?</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light v-split-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h2 id="performance">Performance</h2>
+
+<p><a href="https://pez.github.io/languages-visualizations/">pez.github.io/languages-visualizations/</a></p>
+
+<p>Other languages benefit from reduced overhead, greater memory efficiency, or parallelism (e.g. <code class="hljs ebnf"><span class="hljs-attribute">polars</span></code>)</p></div>
+        <video controls="" class=" size-contain position-center-center" style="" data-paused-by-reveal=""><source src="images/benchmarks.mp4"></video>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="interoperability">Interoperability</h2>
+
+<ol>
+<li>Platform functionality (e.g. OS features, GUI toolkits)</li>
+<li>Access to libraries with C/C++ APIs (e.g. <code class="hljs ebnf"><span class="hljs-attribute">openssl</span></code>, <code class="hljs ebnf"><span class="hljs-attribute">libpq</span></code>)</li>
+</ol></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><table>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+
+<thead>
+<tr>
+	<th>&nbsp;</th>
+	<th>Spawn processes</th>
+	<th>Fiddle/FFI</th>
+	<th>Native extensions </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>&nbsp;</td>
+	<td>Chromium, GraphicsMagick</td>
+	<td>LibUI, fluentd</td>
+	<td>Nokogiri, ruby-vips, pg </td>
+</tr>
+<tr>
+	<td><strong>Pros</strong></td>
+	<td>Strong isolation<br>Straightforward*<br></td>
+	<td>Direct access to C APIs<br>Dynamic</td>
+	<td>Deeper integration</td>
+</tr>
+<tr>
+	<td><strong>Cons</strong></td>
+	<td>Overhead<br>IPC</td>
+	<td>Overhead<br>Trickier with complex APIs</td>
+	<td>More ceremony</td>
+</tr>
+</tbody>
+</table></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="howdonativeextensionswork">How do native extensions work?</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light caption-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-caption media-grid" style="width: 100%; font-size: 0.859rem;">
+        <figure style=""><img src="images/gemspec.png" class=" size-contain position-center-center"></figure>
+        <div style=""><p><a href="https://guides.rubygems.org/specification-reference/#extensions">guides.rubygems.org/specification-reference</a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><div class="single-image-wrapper"><video controls="" class=" size-contain position-center-center" data-paused-by-reveal=""><source src="images/extconf.mp4"></video></div></div>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light caption-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-caption media-grid" style="width: 100%; font-size: 0.813rem;">
+        <figure style=""><img src="images/MakeMakefile.png" class=" size-contain position-center-center"></figure>
+        <div style=""><p><a href="https://docs.ruby-lang.org/en/master/MakeMakefile.html">docs.ruby-lang.org/en/master/MakeMakefile.html</a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><div class="single-image-wrapper"><video controls="" class=" size-contain position-center-center" data-paused-by-reveal=""><source src="images/require.mp4"></video></div></div>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.531rem;">
+        <div style=""><pre><code class="c hljs c-like">
+<span class="hljs-comment">/*
+ *  call-seq:
+ *     require(name)    -&gt; true or false
+ *
+ *  Loads the given +name+, returning +true+ if successful and +false+ if the
+ *  feature is already loaded.
+ *
+ *  [...]
+ *
+ *  If the filename has the extension ".rb", it is loaded as a source file; if
+ *  the extension is ".so", ".o", or the default shared library extension on
+ *  the current platform, Ruby loads the shared library as a Ruby extension.
+ * 
+ * [...]
+ */</span>
+</code></pre>
+
+<p><a href="https://github.com/ruby/ruby/blob/aa0f689bf45352c4a592e7f1a044912c40435266/load.c#L1106-L1141"><code class="hljs llvm"><span class="hljs-keyword">load</span>.<span class="hljs-keyword">c</span></code></a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.578rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> *
+<span class="hljs-title">dln_load_and_init</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *file, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *init_fct_name)</span>
+</span>{
+<span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> defined(_WIN32) || defined(USE_DLN_DLOPEN)</span>
+    <span class="hljs-keyword">void</span> *handle = dln_open(file);
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> RUBY_DLN_CHECK_ABI</span>
+    <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> abi_version_number;
+    abi_version_number binary_abi_version =
+        dln_sym_callable(abi_version_number, (<span class="hljs-keyword">void</span>), handle, EXTERNAL_PREFIX <span class="hljs-string">"ruby_abi_version"</span>)();
+    <span class="hljs-keyword">if</span> (binary_abi_version != RUBY_ABI_VERSION &amp;&amp; abi_check_enabled_p()) {
+        dln_loaderror(<span class="hljs-string">"incompatible ABI version of binary - %s"</span>, file);
+    }
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+
+    <span class="hljs-comment">/* Call the init code */</span>
+    dln_sym_callable(<span class="hljs-keyword">void</span>, (<span class="hljs-keyword">void</span>), handle, init_fct_name)();
+</code></pre>
+
+<p><a href="https://github.com/ruby/ruby/blob/aa0f689bf45352c4a592e7f1a044912c40435266/dln.c#L505-L521"><code class="hljs llvm">dln.<span class="hljs-keyword">c</span></code></a> (see also: <a href="https://www.man7.org/linux/man-pages/man3/dlopen.3.html"><code class="hljs ebnf"><span class="hljs-attribute">dlopen</span></code></a> and <a href="https://man7.org/linux/man-pages/man3/dlsym.3.html#SEE_ALSO"><code class="hljs ebnf"><span class="hljs-attribute">dlsym</span></code></a>)</p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="rubyscapi">Ruby's C API</h2>
+
+<ul>
+<li><a href="https://docs.ruby-lang.org/en/3.4/extension_rdoc.html">High-level guide</a></li>
+<li><a href="https://docs.ruby-lang.org/capi/en/master/">C documentation</a></li>
+<li><a href="https://github.com/ruby/ruby/blob/aa0f689bf45352c4a592e7f1a044912c40435266/include/ruby/ruby.h"><code class="hljs vim"><span class="hljs-keyword">ruby</span>.h</code></a></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><pre><code class="c hljs c-like"><span class="hljs-comment">/**
+ * Defines a method.
+ *
+ * @param[out]  klass  A module or a class.
+ * @param[in]   mid    Name of the function.
+ * @param[in]   func   The method body.
+ * @param[in]   arity  The number of parameters.  See @ref defmethod.
+ * @note        There are in fact 18 different prototypes for func.
+ * @see         ::ruby::backward::cxxanyargs::define_method::rb_define_method
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rb_define_method</span><span class="hljs-params">(VALUE klass, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *mid, VALUE (*func)(ANYARGS), <span class="hljs-keyword">int</span> arity)</span></span>;
+</code></pre>
+
+<p><a href="https://github.com/ruby/ruby/blob/aa0f689bf45352c4a592e7f1a044912c40435266/include/ruby/internal/method.h#L89-L99"><code class="hljs gradle"><span class="hljs-keyword">include</span><span class="hljs-regexp">/ruby/i</span>nternal/method.h</code></a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/TYPE%20macro.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="packaging">Packaging</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light v-split-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h2 id="sourcegem">Source gem</h2>
+
+<p>Ship the source code and build the extension on install</p>
+
+<ul>
+<li>Smaller <code class="hljs asciidoc"><span class="hljs-title">.gem</span></code></li>
+<li>Easier publishing process</li>
+<li>Requires a toolchain (e.g. GCC/clang) to install</li>
+</ul></div>
+        <div style=""><h2 id="platform-specificgem">Platform-specific gem</h2>
+
+<p>Ship a pre-built binary blob</p>
+
+<ul>
+<li>Quicker installs</li>
+<li>No toolchain needed</li>
+<li>Binary blobs ☢️</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/nokogiri%20gem%20versions.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="notmentioned">Not mentioned</h2>
+
+<ul>
+<li>Vendoring vs. using OS-provided libraries (e.g. via <code class="hljs ebnf"><span class="hljs-attribute">apt</span></code>)</li>
+<li>Static vs. Dynamic linking</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="whyrust🦀">Why Rust? 🦀</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light has-background-image grid-container responsive present has-light-background fitted" data-background-image="images/Evangelism.png" style="display: grid;" data-updated="true">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-grid grid-items-0 has-only-media" style="width: 100%; font-size: 1rem;">
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><ul>
+<li>Advantages of a low-level language (e.g. no GC, no runtime, C interop)</li>
+<li>The type system, type inference, and the standard library's design can make code feel surprisingly high-level (see <a href="https://doc.rust-lang.org/stable/std/iter/trait.Iterator.html"><code class="hljs dart"><span class="hljs-built_in">Iterator</span></code></a>)</li>
+<li>Memory safety and strong typing push a lot of issues to compile time (e.g. <code class="hljs ebnf"><span class="hljs-attribute">NoMethodError</span></code> is not a thing)</li>
+<li>Bundler-like package manager (<code class="hljs ebnf"><span class="hljs-attribute">cargo</span></code>) and ecosystem (see <a href="https://lib.rs/">lib.rs</a>, <a href="https://docs.rs/">docs.rs</a>)</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Yehuda%20Cargo.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h2 id="momentum">Momentum</h2>
+
+<ul>
+<li>Ruby (YJIT/ZJIT)</li>
+<li>Linux kernel</li>
+<li>Windows kernel</li>
+<li>AWS S3 / Firecracker</li>
+<li>Language tooling (SWC, Astral)</li>
+<li>Apps (1Password, Zed, Signal, Matrix)</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="ruby🤝rust">Ruby 🤝 Rust</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Helix.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light v-split-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><h2 id="oxidize-rbrb-sys"><a href="https://github.com/oxidize-rb/rb-sys">oxidize-rb/rb-sys</a></h2>
+
+<ul>
+<li>Auto-generated low-level bindings to <code class="hljs vim"><span class="hljs-keyword">ruby</span>.h</code> (via <a href="https://github.com/rust-lang/rust-bindgen">bindgen</a>)</li>
+<li>Ruby gem to make Rust extensions work with Rake and <code class="hljs">extconf.rb</code></li>
+<li>Cross-compilation tooling</li>
+</ul></div>
+        <div style=""><h2 id="matsadlermagnus"><a href="https://github.com/matsadler/magnus">matsadler/magnus</a></h2>
+
+<ul>
+<li>Friendlier/safer wrapper on top of <code class="hljs ebnf"><span class="hljs-attribute">rb-sys</span></code></li>
+<li>Macros, traits, and other niceties to make interoperability easier (e.g. manipulating Ruby objects from Rust, passing Rust types back to Ruby)</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Magnus%20define%20method.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light full-image-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/magnus%20yieldvalues.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light caption-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-caption media-grid" style="width: 100%; font-size: 0.766rem;">
+        <figure style=""><img src="images/approaches.png" class=" size-contain position-center-center"></figure>
+        <div style=""><p><a href="https://oxidize-rb.github.io/rb-sys/development-approaches.html#when-to-choose-each-approach">oxidize-rb.github.io/rb-sys/development-approaches.html#when-to-choose-each-approach</a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="gettingstarted">Getting started</h1>
+
+<p><code class="hljs mipsasm"><span class="hljs-keyword">bundle </span>gem hello_rust --<span class="hljs-keyword">ext </span>rust</code></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="additionalconsiderations">Additional considerations</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h2 id="mappingtooopapis">Mapping to OOP APIs</h2>
+
+<ul>
+<li>Idiomatic Rust doesn't map cleanly to idiomatic Ruby, particularly when it comes to borrow-checked references</li>
+<li>This can be worked around through things like <code class="hljs ebnf"><span class="hljs-attribute">Arc</span></code> or by putting the logic in Ruby</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><pre><code class="ruby hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Document</span>;</span> <span class="hljs-keyword">end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Element</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize</span><span class="hljs-params">(document)</span></span>
+    <span class="hljs-variable">@document</span> = document <span class="hljs-comment"># &lt;= this is fine</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ancestor</span></span>
+    <span class="hljs-variable">@document</span>.ancestor(<span class="hljs-keyword">self</span>)
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light v-split-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/root_element.png" class=" size-contain position-center-center"></figure>
+        <figure style=""><img src="images/element_ref.png" class=" size-contain position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.438rem;">
+        <div style=""><pre><code class="rust hljs"><span class="hljs-meta">#[derive(Clone)]</span>
+<span class="hljs-meta">#[magnus::wrap(class = <span class="hljs-meta-string">"Sawzall::Document"</span>, free_immediately)]</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Document</span></span>(Arc&lt;Mutex&lt;Html&gt;&gt;);
+
+<span class="hljs-keyword">impl</span> Document {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">root_element</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; Element {
+        <span class="hljs-keyword">self</span>.with_locked_html(|html| Element {
+            id: html.root_element().id(),
+            document: <span class="hljs-keyword">self</span>.clone(),
+        })
+    }
+}
+</code></pre>
+
+<pre><code class="rust hljs"><span class="hljs-keyword">impl</span> Element {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">with_element_ref</span></span>&lt;U, F&gt;(&amp;<span class="hljs-keyword">self</span>, f: F) -&gt; U
+    <span class="hljs-keyword">where</span>
+        F: <span class="hljs-built_in">FnOnce</span>(ElementRef) -&gt; U,
+    {
+        <span class="hljs-keyword">let</span> html = <span class="hljs-keyword">self</span>.document.<span class="hljs-number">0</span>.lock().expect(<span class="hljs-string">"failed to lock mutex"</span>);
+        <span class="hljs-keyword">let</span> element_ref = html
+            .tree
+            .get(<span class="hljs-keyword">self</span>.id)
+            .and_then(ElementRef::wrap)
+            .expect(<span class="hljs-string">"node with id {self.id} must be an element in the tree"</span>);
+
+        f(element_ref)
+    }
+}
+</code></pre></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="testing">Testing</h2>
+
+<ul>
+<li>Ruby testing with RSpec/Minitest/etc... works as you would expect with the only caveat being you have to <code class="hljs ebnf"><span class="hljs-attribute">rake compile</span></code> first.</li>
+<li>Testing pure Rust code with <code class="hljs bash">cargo <span class="hljs-built_in">test</span></code> also works as you would expected</li>
+<li><code class="hljs ebnf"><span class="hljs-attribute">rb-sys</span></code> provides a <code class="hljs cmake">rb-sys-<span class="hljs-keyword">test</span>-helpers</code> crate to test Rust code that interacts with the Ruby VM (see <a href="https://oxidize-rb.github.io/rb-sys/testing.html">oxidize-rb.github.io/rb-sys/testing.html</a>)</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><h2 id="documentationoptions">Documentation options</h2>
+
+<ul>
+<li><p><strong>Write YARD in Rust</strong></p>
+<a href="https://github.com/oxidize-rb/yard-rustdoc"><code class="hljs cpp">YARD::Rustdoc</code></a> allows you to write YARD documentation in your Rust code</li>
+<li><p><strong>Write YARD in Ruby</strong></p>
+YARD's <a href="https://www.rubydoc.info/gems/yard/file/docs/Tags.md#parse"><code class="hljs erlang-repl">@!parse</code></a> and <a href="https://www.rubydoc.info/gems/yard/file/docs/Tags.md#method"><code class="hljs oxygene">@!<span class="hljs-function"><span class="hljs-keyword">method</span></span></code></a> tags let you document classes and methods that aren't defined in the source code (e.g. to support metaprogramming)</li>
+<li>For extra credit, test your <code class="hljs aspectj"><span class="hljs-meta">@example</span></code> tags with <a href="https://github.com/p0deje/yard-doctest"><code class="hljs cpp">YARD::Doctest</code></a></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><h2 id="gcmemorymanagementconsiderations">GC / memory management considerations</h2>
+
+<ol>
+<li>Rust data types that are wrapped and passed to Ruby have their <code class="hljs ebnf"><span class="hljs-attribute">drop</span></code> implementation called when the GC runs.</li>
+<li><p>If your Rust data structures hold onto Ruby objects, you are responsible for providing the appropriate GC hooks so they aren't removed from under you. </p>
+See:
+
+<ul>
+<li><a href="https://docs.rs/magnus/latest/magnus/derive.TypedData.html"><code class="hljs ebnf"><span class="hljs-attribute">TypedData</span></code></a></li>
+<li><a href="https://docs.rs/magnus/latest/magnus/typed_data/trait.DataTypeFunctions.html"><code class="hljs ebnf"><span class="hljs-attribute">DataTypeFunctions</span></code></a></li>
+</ul></li>
+</ol></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h2 id="gvlconsiderations">GVL considerations</h2>
+
+<ul>
+<li>By default, Rust code is called with the GVL (Global VM Lock) acquired, which can become an issue when performing computationally-expensive work as no other Ruby code can progress in the meantime.</li>
+<li>In those scenarios it can be manually released
+
+<ul>
+<li><a href="https://docs.rs/rb-sys/latest/rb_sys/bindings/uncategorized/fn.rb_thread_call_without_gvl.html"><code class="hljs ebnf"><span class="hljs-attribute">rb_thread_call_without_gvl</span></code></a></li>
+<li><a href="https://oxidize-rb.github.io/rb-sys/development-approaches.html?highlight=gvl#using-rb_thread_call_without_gvl-for-performance">Docs</a></li>
+</ul></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light default-container responsive present fit-warning has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h2 id="cross-compilation">Cross-compilation</h2>
+
+<ul>
+<li>For convenience, you may want to provide pre-built binaries for different Ruby versions and platforms.</li>
+<li><p>The <code class="hljs ebnf"><span class="hljs-attribute">rb-sys</span></code> gem provides <a href="https://github.com/oxidize-rb/rb-sys/blob/b677a05f9ed36dd10aabe71f90cf33c9cadae43a/gem/exe/rb-sys-dock">a <code class="hljs ebnf"><span class="hljs-attribute">rb-sys-dock</span></code> command</a> to make this easier using <a href="https://github.com/oxidize-rb/rb-sys/tree/main/docker">a set of Docker images</a>.</p>
+<a href="https://oxidize-rb.github.io/rb-sys/cross-platform.html">Docs</a></li>
+<li><p><a href="https://github.com/Shopify/blake3-rb/">Shopify/blake3-rb/</a> is a good example of how to do this on GitHub Actions.</p>
+<a href="https://github.com/davidcornu/sawzall/blob/2520978866ea0efb7281a0b9439c81d7028b10e0/.github/workflows/release.yml">Basic example on davidcornu/sawzall</a></li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings light cover-container responsive present has-light-background fitted" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="fin">Fin</h1>
+
+<p>🐘 <a href="https://cosocial.ca/@dc">cosocial.ca/@dc</a></p>
+
+<p>🧑‍💻 <a href="https://github.com/davidcornu/">github.com/davidcornu/</a></p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section></div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>
